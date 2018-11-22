@@ -10,6 +10,10 @@ class Category extends Model
 
 	public function products()
 	{
-		return $this->hasMany(Product::class, 'category_id', 'id');
+		// return $this->hasMany(Product::class, 'category_id', 'id');
+
+		// En las realción es de "muchos", si las foreign keys y los constraints están bien hechos
+		// No es necesario pasar los demas parámetros
+		return $this->hasMany(Product::class);
 	}
 }
