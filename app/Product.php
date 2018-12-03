@@ -11,13 +11,13 @@ class Product extends Model
 	public function category()
 	{
 		// Cuando la relación es hasOne SI es necesario declarar todos los atributos
-		return $this->hasOne(Category::class, 'id', 'category_id');
+		return $this->belongsTo(Category::class);
 	}
 
 	public function brand()
 	{
 		// Cuando la relación es hasOne SI es necesario declarar todos los atributos
-		return $this->hasOne(Brand::class, 'id', 'brand_id');
+		return $this->belongsTo(Brand::class);
 	}
 
 	public function colors()
