@@ -24,7 +24,7 @@ class Product extends Model
 	{
 		// return $this->belongsToMany(Color::class, 'color_product', 'product_id', 'color_id')->withTimestamps();
 
-		// En las realción es de "muchos", si las foreign keys y los constraints están bien hechos
+		// En la relación de "muchos", si las foreign keys y los constraints están bien hechos
 		// No es necesario pasar los demas parámetros
 		return $this->belongsToMany(Color::class)->withTimestamps();
 	}

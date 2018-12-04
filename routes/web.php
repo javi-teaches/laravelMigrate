@@ -19,15 +19,15 @@ Route::get('/', function () {
 		echo "<h2>Product: $product->name</h2>";
 		echo "<image src='{$product->image}' width='100'>";
 		echo "<ul>";
-		echo "<li><b>Category:</b> {$product->category->name}</li>";
-		echo "<li><b>Brand:</b> {$product->brand->name}</li>";
-		echo "<li><b>Colors:</b>";
-		echo "<ul>";
-		foreach ($product->colors->all() as $color) {
-			echo "<li>$color->name</li>";
-		}
-		echo "</ul>";
-		echo "</li>";
+			echo "<li><b>Category:</b> {$product->category->name}</li>";
+			echo "<li><b>Brand:</b> {$product->brand->name}</li>";
+			echo "<li><b>Colors:</b>";
+				echo "<ul>";
+				foreach ($product->colors->all() as $color) {
+					echo "<li>$color->name</li>";
+				}
+				echo "</ul>";
+			echo "</li>";
 		echo "</ul>";
 	}
 });
@@ -38,14 +38,14 @@ Route::get('/colors', function () {
 	foreach ($colors as $color) {
 		echo "<h2>Color: $color->name</h2>";
 		echo "<ul>";
-		echo "<li><b>Products:</b>";
-		echo "<ul>";
-		foreach ($color->products->all() as $product) {
-			echo "<li>$product->name</li>";
-		}
-		// $color->products->all()->pluck('name')->implode(' - ');
-		echo "</ul>";
-		echo "</li>";
+			echo "<li><b>Products:</b>";
+				echo "<ul>";
+				foreach ($color->products->all() as $product) {
+					echo "<li>$product->name</li>";
+				}
+				// $color->products->all()->pluck('name')->implode(' - ');
+				echo "</ul>";
+			echo "</li>";
 		echo "</ul>";
 	}
 });
