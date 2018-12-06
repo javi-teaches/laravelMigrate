@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 	foreach ($products as $product) {
 		echo "<h2>Product: $product->name</h2>";
-		echo "<image src='{$product->image}' width='100'>";
+		echo "<image src='/images/{$product->image}' width='100'>";
 		echo "<ul>";
 			echo "<li><b>Category:</b> {$product->category->name}</li>";
 			echo "<li><b>Brand:</b> {$product->brand->name}</li>";
@@ -66,3 +66,14 @@ Route::get('/categories', function () {
 		echo "</ul>";
 	}
 });
+
+// Route::get('/products', 'ProductController@index'); // index
+// Route::post('/products', 'ProductController@store'); // store
+// Route::get('/products/create', 'ProductController@create'); // create
+// Route::get('/products/{id}', 'ProductController@show'); // show
+// Route::update('/products/{id}', 'ProductController@update'); // update
+// Route::delete('/products/{id}', 'ProductController@destroy'); // destroy
+// Route::get('/products/{id}/edit', 'ProductController@edit'); // edit
+
+Route::resource('/products', 'ProductController');
+Route::get('/products/api/getProducts', 'ProductController@apiGetProducts');
